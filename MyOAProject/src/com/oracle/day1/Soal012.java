@@ -1,6 +1,6 @@
-package com.oracle;
+package com.oracle.day1;
 
-public class Soal010 {
+public class Soal012 {
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder(5);
         String s = "";

@@ -1,4 +1,4 @@
-package com.oracle;
+package com.oracle.day1;
 
 public class Soal004 {
     public static void main(String[] args) {
