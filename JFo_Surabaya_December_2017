@@ -1,7 +1,7 @@
 Java Foundations Surabaya December 2017
 
 Day 1
------
+=============================================================================
 
 1Z0-811 Exam Objectives
 (https://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=5001&get_params=p_exam_id:1Z0-811)
@@ -251,6 +251,123 @@ berdasarkan lokasinya, variable dibedakan menjadi:
 	didefine di dalam method (sebagai parameter atau di dalam body dari method)
 	tidak bisa memiliki access modifier
 	HARUS diinisialisasi secara explicit sebelum digunakan
+
+
+Day 2
+==========================================================
+
+String -- immutable object
+		  setiap kali dimodifikasi dia akan membuat tempat baru di memory area
+
+		  		Mutable		Thread-safe
+String 			   X 			X
+StringBuilder  	   V 		    X
+StringBuffer	   V	   	    V
+
+Membandingkan dua object String:
+- equals / equalsIgnoreCase : boolean
+	dua string dikatakan sama jika mengembalikan nilai true
+- compareTo / compareToIgnoreCase : int
+	dua string dikatakan sama jika mengembalikan nilai 0
+- == (tidak direkomendasikan --> yang dibandingkan adalah lokasi object di heap area, bukan isi/value dari object)
+
+
+member dari sebuah class dapat dibedakan menjadi dua:
+- instance member -- non static
+	member ini dapat diakses menggunakan instance atau object dari class tersebut
+	dapat digunakan sebagai PEMBEDA antara instance yang satu dengan instance yang lain
+- class member -- static
+	member ini dapat diakses cukup menggunakan nama class nya (tidak perlu membuat object)
+	tidak dapat digunakan sebagai pembeda antara instance yang satu dengan yang lain (karena nilainya di share, digunakan bersama)
+
+
+operand 1 && operand 2
+
+operand 1 & operand 2
+
+switch --- byte,short,char,int
+		   JDK1.5 -- enum
+		   JDK1.7 -- String
+
+looping
+- for --- Nx
+	for(init_expr; boolean_expr; alter_expr) {
+
+	}
+- while --- 0 - ~
+	while(boolean_expr) {
+
+	}
+- do..while --- 1 - ~
+	do {
+
+	} while(boolean_expr);
+
+
+constructor
+-----------
+digunakan / dipanggil pada saat dibuat object dari sebuah class (dengan keyword 'new')
+
+syntax constructor mirip dengan method, HANYA SAJA:
+1. constructor tidak memiliki return_type
+2. nama constructor SAMA PERSIS dengan nama class
+
+Setiap class PASTI memiliki constructor, jika tidak dituliskan secara explicit, maka akan dibuatkan DEFAULT CONSTRUCTOR. Default Constructor:
+	- parameter nya kosong
+	- body nya juga kosong
+
+constructor juga dapat difungsikan untuk menginisialisasi attribute dari object yang dibuat.
+
+jika kita menuliskan constructor secara explicit, maka default constructor akan hilang
+untuk tetap dapat menggunakan default constructor, kita bisa melakukan OVERLOADING CONSTRUCTOR
+Syarat OVERLOADING:
+--> parameter HARUS BERBEDA
+		- beda jumlah
+		- beda tipe
+		- beda urutan
+
+sama halnya dengan constructor, method dapat di overloading
+Syarat method OVERLOADING:
+--> nama method: SAMA
+--> parameter HARUS BERBEDA
+		- beda jumlah
+		- beda tipe
+		- beda urutan
+- access modifier: boleh sama
+- return type: boleh sama
+
+
+Encapsulation
+-------------------
+membungkus --- apa yang dibungkus? - variable
+								   - method
+		  variable dan method HARUS didefinisikan di dalam class								   
+
+selain membungkus, encapsulation dapat digunakan untuk menyembunyikan data (information hiding), maksudnya supaya data digunakan dengan aturan yang sudah ditentukan (data tidak diisi dengan sembarang nilai).
+
+Encapsulation dilakukan dengan:
+1. menambahkan access modifier 'private' pada variable
+2. menyediakan method accessor / getter --> mengambil nilai 
+3. menyediakan method mutator / setter --> memberi nilai
+
+access 		 same   	same  		inheri- 	univer-
+modifier 	 class  	package 	tance  		sal
+=========================================================
+private        V 	       X  	       X 		  X
+[default]  	   V  	       V  		   X 	      X
+protected  	   V  		   V  		   V  		  X
+public     	   V  	       V 		   V 		  V
+
+
+final 
+- variable --> nilainya konstan, tidak bisa diubah nilainya, jika diubah: error pada saat di compile
+- method --> tidak dapat di OVERRIDE
+- class --> tidak dapat di extends (tidak bisa memiliki turunan)
+
+
+
+
+
 
 
 
