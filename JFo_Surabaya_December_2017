@@ -1,5 +1,8 @@
 Java Foundations Surabaya December 2017
 
+Repository:
+https://github.com/r1zq1/oa-jf-surabaya
+
 Day 1
 =============================================================================
 
@@ -363,6 +366,77 @@ final
 - variable --> nilainya konstan, tidak bisa diubah nilainya, jika diubah: error pada saat di compile
 - method --> tidak dapat di OVERRIDE
 - class --> tidak dapat di extends (tidak bisa memiliki turunan)
+
+Array
+-------------------------------------------------------
+1. Declaration
+	int []a,b,c;		Siswa []s;
+	int a[],b,c;
+
+	int [][]matrix;
+	int []matrix[];
+	int matrix[][];
+
+2. Instantiation
+	a = new int[4]; 	s = new Siswa[2];
+	matrix = new int[3][4];
+
+3. Initialization
+	a[0] = 10; 			s[0] = new Siswa();
+	a[1] = 20; 			s[1] = new Siswa();
+	a[2] = 30;
+	a[3] = 40;
+
+	matrix[0][1] = 100;
+	matrix[1][2] = 200;
+	matrix[2][0] = 300;
+
+	a = new int[6];
+
+alternative lain untuk membuat array:
+int []a = {10,20,30,40};
+int [][]matrix = {{0,100,0,0},{0,0,200,0},{300,0,0,0}};
+
+ukuran array TIDAK BISA di-re-size
+
+ArrayList
+------------------------------------------------------
+
+Collections Framework
+collections adalah sebuah OBJECT yang terdiri dari kumpulan OBJECT yang dinamakan sebagai element.
+
+Sifat ArrayList:
+- ada urutan (index)
+- boleh ada duplikasi
+
+ArrayList --- 'dynamic array'
+
+Error:
+- syntax error
+- logic error
+- exception
+
+Exception
+-------------------------
+- unchecked
+	semua subclass dari RuntimeException
+- checked
+	semua subclass dari Exception kecuali RuntimeException
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
